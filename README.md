@@ -1,30 +1,18 @@
-# React To-Do List App ✅
+# ✅ My To-Do List (React)
 
-A simple and responsive To-Do List application built with **React**.  
-Users can add tasks, mark them as complete, and delete them.  
+A simple To-Do List app built with React.  
+Features:
+- Add tasks
+- Mark tasks as completed
+- Delete tasks
 
----
-
-## 🚀 Features
-- ➕ Add new tasks
-- ✅ Mark tasks as complete
-- ❌ Delete tasks
-- 💾 Local state management
-- 📱 Responsive design
-
----
-
-## 🛠️ Tech Stack
-- **React** (Vite setup)
-- **JavaScript (ES6+)**
-- **Tailwind CSS** (for styling)
-- **UUID** (for unique IDs)
-
----
-
-## 📦 Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/todo-list-app.git
-   cd todo-list-app
+## 🚀 Demo
+You can run this project on:
+- CodeChef React Compiler: Copy code into https://www.codechef.com/react-online-compiler
+- Local: 
+```bash
+git clone https://github.com/kojoashiadey/my-todo-list.git
+cd my-todo-list
+npm install
+npm run dev   # if using Vite
+# or npm start  # if using Create React App
