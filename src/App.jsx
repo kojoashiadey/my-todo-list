@@ -1,53 +1,44 @@
 import React, { useState } from "react";
+import TodoList from "./TodoList";
 import "./styles.css";
 
 export default function App() {
-  const [task, setTask] = useState("");
   const [todos, setTodos] = useState([]);
+  const [task, setTask] = useState("");
 
-  // Add new task
-  const addTask = () => {
+  const addTodo = (e) => {
+    e.preventDefault();
     if (task.trim() === "") return;
     setTodos([...todos, { id: Date.now(), text: task, completed: false }]);
     setTask("");
   };
 
-  // Toggle completion
-  const toggleTask = (id) => {
+  const toggleTodo = (id) => {
     setTodos(
-      todos.map((t) =>
-        t.id === id ? { ...t, completed: !t.completed } : t
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     );
   };
 
-  // Delete task
-  const deleteTask = (id) => {
-    setTodos(todos.filter((t) => t.id !== id));
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   return (
-    <div className="todo-app">
-      <h1>My To-Do List</h1>
-      <div className="input-area">
+    <div className="app-container">
+      <h1>My To-Do List ✅</h1>
+      <form onSubmit={addTodo} className="form">
         <input
           type="text"
           value={task}
           onChange={(e) => setTask(e.target.value)}
           placeholder="Enter a new task..."
         />
-        <button onClick={addTask}>Add</button>
-      </div>
-
-      <ul>
-        {todos.map((t) => (
-          <li key={t.id} className={t.completed ? "completed" : ""}>
-            <span onClick={() => toggleTask(t.id)}>{t.text}</span>
-            <button className="delete" onClick={() => deleteTask(t.id)}>
-              ✖
-            </button>
-          </li>
-        ))}
-      </ul>
+        <button type="submit">Add</button>
+      </form>
+      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </div>
   );
+}
+
