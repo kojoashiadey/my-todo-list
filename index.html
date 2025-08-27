@@ -1,61 +1,12 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>My To Do List</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
-
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="A simple and beautiful To Do List app to help you manage tasks efficiently." />
-    <meta name="keywords" content="to do list, tasks, productivity app, react, vite" />
-    <meta name="author" content="Kojo Ashiadey" />
-
-    <!-- Open Graph (for link sharing on WhatsApp, Twitter, etc.) -->
-    <meta property="og:title" content="My To Do List App" />
-    <meta property="og:description" content="Organize your daily tasks easily with this clean To Do List app." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://my-todo-list-chi-ten.vercel.app" />
-    <meta property="og:image" content="/todo-preview.png" />
-
-    <!-- Tailwind CSS (optional but recommended for styling) -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
   </head>
-
-  <body class="bg-gray-100 text-gray-800">
-    <!-- Root div where React mounts -->
+  <body>
     <div id="root"></div>
-
-    <!-- Loading screen before React renders -->
-    <div id="loading" class="fixed inset-0 flex items-center justify-center bg-white">
-      <div class="flex flex-col items-center space-y-2">
-        <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-        <p class="text-gray-600 font-medium">Loading To Do List...</p>
-      </div>
-    </div>
-
-    <!-- React entry file -->
-    <script type="module" src="/src/main.jsx"></script>
-
-    <!-- Small script to hide loader after React is ready -->
-    <script>
-      window.addEventListener("DOMContentLoaded", () => {
-        const root = document.getElementById("root");
-        const loader = document.getElementById("loading");
-        const observer = new MutationObserver(() => {
-          if (root.children.length > 0) {
-            loader.style.display = "none";
-            observer.disconnect();
-          }
-        });
-        observer.observe(root, { childList: true });
-      });
-    </script>
   </body>
 </html>
-
